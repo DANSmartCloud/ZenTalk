@@ -147,7 +147,7 @@ db.type=mongodb
 - `command`: 实现命令行控制台功能，包括用户管理、好友管理、设置等
 - `config`: 加载和管理系统配置
 - `db`: 数据库服务，封装MongoDB和Redis操作
-- `drawer`: (用途待确认，可能与UI或特定功能相关)
+- `drawer`: 负责绘制功能
 - `friend`: 处理好友请求、搜索和通知
 - `http`: 实现HTTP服务器，处理REST API请求
 - `security`: 处理JWT认证和密钥管理
