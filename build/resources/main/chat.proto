@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.ZenTalk.protobuf;
+
+option java_package = "com.ZenTalk.protobuf";
+option java_outer_classname = "ChatProtocol";
+
+enum MessageType {
+  TEXT = 0;
+  IMAGE = 1;
+  VIDEO = 2;
+  AUDIO = 3;
+  FILE = 4;
+  COMMAND = 5;
+}
+
+message ChatFrame {
+  bytes payload = 1;
+  int64 timestamp = 2;
+  MessageType type = 3;
+}
+
+message TextPayload {
+  string content = 1;
+  repeated string mentions = 2;
+}
+
+message MediaPayload {
+  string url = 1;
+  string thumbnail = 2;
+  int32 width = 3;
+  int32 height = 4;
+  int32 duration = 5;
+}
+
+message CommandPayload {
+  string command = 1;
+  map<string, string> params = 2;
+}
